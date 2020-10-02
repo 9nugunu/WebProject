@@ -41,7 +41,7 @@ INSTALLED_APPS = [
     'main_app.apps.Main_appConfig',
     'DSUM_app.apps.Dsum_appConfig',
     'tutoring_app.apps.Tutoring_appConfig',
-
+    'QnA_app.apps.QnaAppConfig',
     ]
 
 MIDDLEWARE = [
@@ -125,7 +125,7 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'func', 'static')
+    os.path.join(BASE_DIR, 'main_app', 'static')
 
 ]
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
