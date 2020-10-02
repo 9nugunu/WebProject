@@ -1,5 +1,5 @@
-"""basicset URL Configuration
-
+"""
+basicset URL Configuration
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/3.1/topics/http/urls/
 Examples:
@@ -15,19 +15,15 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-import func.views
-import excurri.views
-import DSUM.views
-import competition.views
-import tutoring.views
-
+import main_app.views
+import DSUM_app.views
+import tutoring_app.views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', func.views.main, name='main'),
-    path('excurri/', excurri.views.excurri, name='excurri'),
-    path('dsum/', DSUM.views.dsum, name='dsum'),
-    path('competition/', competition.views.competition, name='competition'),
-    path('tutoring/', tutoring.views.tutoring, name='tutoring'),
-
+    path('', main_app.views.main, name='main'),
+    path('excurri/', main_app.views.excurri, name='excurri'),
+    path('dsum/', DSUM_app.views.dsum, name='dsum'),
+    path('contest/', main_app.views.contest, name='contest'),
+    path('tutoring/', tutoring_app.views.tutoring, name='tutoring'),
 ]

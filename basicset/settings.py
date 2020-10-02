@@ -38,11 +38,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'func.apps.FuncConfig',
-    'excurri.apps.ExcurriConfig',
-    'competition.apps.CompetitionConfig',
-    'DSUM.apps.DsumConfig',
-    'tutoring.apps.TutoringConfig',
+    'main_app.apps.Main_appConfig',
+    'DSUM_app.apps.Dsum_appConfig',
+    'tutoring_app.apps.Tutoring_appConfig',
 
     ]
 
