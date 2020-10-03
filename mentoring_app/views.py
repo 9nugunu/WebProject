@@ -5,3 +5,5 @@ from django.shortcuts import render
 def dsum(request):
     return render(request, 'dsum.html')
     
+def tutoring(request):
+    return render(request, 'tutoring.html')
