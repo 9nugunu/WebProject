@@ -39,8 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'main_app.apps.Main_appConfig',
-    'DSUM_app.apps.Dsum_appConfig',
-    'tutoring_app.apps.Tutoring_appConfig',
+    'mentoring_app.apps.Mentoring_appConfig',
     'QnA_app.apps.QnaAppConfig',
     ]
 
