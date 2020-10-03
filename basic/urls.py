@@ -16,12 +16,10 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 import main_app.urls
-import DSUM_app.views
-import tutoring_app.views
+import mentoring_app.urls
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include(main_app.urls)),
-    path('dsum/', DSUM_app.views.dsum, name='dsum'),
-    path('tutoring/', tutoring_app.views.tutoring, name='tutoring'),
+    path('', include(mentoring_app.urls)),
 ]
