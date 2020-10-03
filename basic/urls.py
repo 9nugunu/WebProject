@@ -17,9 +17,11 @@ from django.contrib import admin
 from django.urls import path, include
 import main_app.urls
 import mentoring_app.urls
+import QnA_app.urls
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include(main_app.urls)),
-    path('', include(mentoring_app.urls)),
+    path('mentoring/', include(mentoring_app.urls)),
+    path('QnA/', include(QnA_app.urls)),
 ]
