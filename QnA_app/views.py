@@ -23,8 +23,8 @@ def post(request):
             author = request.POST['author']
             title = request.POST['title']
             content = request.POST['content']
-            docfile = request.POST['docfile']
-            board = QnaModel(author=author, title=title, content=content, docfile=docfile)
+            # docfile = request.POST['docfile']
+            board = QnaModel(author=author, title=title, content=content)
             board.save()
             return redirect('QnA_main')
     else:
