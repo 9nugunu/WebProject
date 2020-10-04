@@ -18,10 +18,11 @@ from django.urls import path, include
 import main_app.urls
 import mentoring_app.urls
 import QnA_app.urls
-
+import login_app.urls
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include(main_app.urls)),
     path('mentoring/', include(mentoring_app.urls)),
     path('QnA/', include(QnA_app.urls)),
+    path('common/', include(login_app.urls)),
 ]

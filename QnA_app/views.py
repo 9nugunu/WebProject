@@ -7,14 +7,14 @@ from .forms import New, AnswerForm
 
 def QnA_main(request):
     boards = QnaModel.objects.all()
-    return render(request, 'QnA_main.html', {'boards':boards})
+    return render(request, 'QnA/QnA_main.html', {'boards':boards})
 
 def detail(request, pk):
     try:
         boards = get_object_or_404(QnaModel, pk=pk)
     except QnaModel.DoesNotExist:
         raise Http404("Does not exist!")
-    return render(request, 'QnA_detail.html', {'boards': boards})
+    return render(request, 'QnA/QnA_detail.html', {'boards': boards})
 
 def post(request):
     if request.method == 'POST':
@@ -29,10 +29,10 @@ def post(request):
             return redirect('QnA_main')
     else:
         form = New()
-        return render(request, 'QnA_post.html', {'form':form})
+        return render(request, 'QnA/QnA_post.html', {'form':form})
 
 def update(request, pk):
-    return render(request, 'QnA_update.html')
+    return render(request, 'QnA/QnA_update.html')
 
 def delete(request, pk):
     Remove = get_object_or_404(QnaModel, pk = pk)
@@ -52,4 +52,4 @@ def answer_create(request, pk):
     else:
         form = AnswerForm()
     context = {'question': question, 'form': form}
-    return render(request, 'QnA_detail.html', context)
+    return render(request, 'QnA/QnA_detail.html', context)
