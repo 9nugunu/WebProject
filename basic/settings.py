@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'main_app.apps.Main_appConfig',
     'mentoring_app.apps.Mentoring_appConfig',
     'QnA_app.apps.QnaAppConfig',
+    'login_app.apps.LoginAppConfig',
     ]
 
 MIDDLEWARE = [
@@ -129,3 +130,6 @@ STATICFILES_DIRS = [
 
 ]
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
+LOGIN_REDIRECT_URL = '/'
+LOGOUT_REDIRECT_URL = '/'
