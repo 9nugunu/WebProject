@@ -8,9 +8,16 @@ class QnaModel(models.Model):
    docfile = models.FileField(default="No files", upload_to="document/upload/")
    created_date = models.DateTimeField(auto_now_add=True)
    modified_date = models.DateTimeField(auto_now=True)
+   hits = models.PositiveIntegerField(default = 0)
 
    def __str__(self):
       return self.title
+   
+   @property
+   def counter(self):
+      self.hits = self.hits + 1
+      self.save()
+
 
 class Answer(models.Model):
    question = models.ForeignKey(QnaModel, on_delete=models.CASCADE)

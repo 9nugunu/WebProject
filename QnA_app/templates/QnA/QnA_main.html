@@ -3,7 +3,7 @@
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
-    <title>QnA게시판 - 목록</title>
+    <title>QnA 게시판 - 목록</title>
     <!-- CSS only -->
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 </head>
@@ -11,8 +11,8 @@
 <header>
     <div class="navbar navbar-dark bg-dark shadow-sm mb-3">
         <div class="container d-flex justify-content-between">
-            <a href="/" class="navbar-brand d-flex align-items-center">
-                <strong>QnA게시판</strong>
+            <a href="{% url 'QnA_main' %}" class="navbar-brand d-flex align-items-center">
+                <strong>QnA 게시판</strong>
             </a>
         </div>
     </div>
@@ -21,14 +21,16 @@
     <table class="table">
         <thead class="thead-light">
         <tr class="text-center">
-            <th scope="col">#</th>
+            <th scope="col">No.</th>
             <th scope="col">제목</th>
             <th scope="col">작성자</th>
+            <th scope="col">조회수</th>
             <th scope="col">작성일</th>
         </tr>
         </thead>
         <tbody>
-        {% for board in boards %}
+        {% if boards %}
+            {% for board in boards %}
         <tr class="text-center">
             <th scope="row">
                 <span>{{ board.id }}</span>
@@ -45,10 +47,15 @@
                 <span>{{ board.author }}</span>
             </td>
             <td>
+                <span>{{ board.hits }}</span>
+            <td>
                 <span>{{ board.created_date | date:"Y-m-d H:i" }}</span>
             </td>
         </tr>
         {% endfor %}
+        {% else %}
+            <p>No post.</p>
+        {% endif %}
         </tbody>
     </table>
     <div class="row">
