@@ -28,6 +28,17 @@
             </li>
         </ul>
     </div>
+    <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            전체비교과 
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <a class="dropdown-item" href="{% url 'dsum' %}">D-SUM</a>
+          <a class="dropdown-item" href="{% url 'contest' %}">공모전</a>
+          <a class="dropdown-item" href="{% url 'tutoring' %}">전공튜터링</a>
+          <a class="dropdown-item" href="{% url 'QnA_main' %}">1000제 문제 QnA</a>
+        </div>
+    </div>
 </nav>
 
 <img src="{% static 'competition2.jpg' %}" style=" width:1000px; height:500px"class="img-fluid" alt="Responsive image">
