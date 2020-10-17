@@ -13,7 +13,7 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='qnamodel',
             name='docfile',
-            field=models.FileField(default="No files", upload_to='document/upload/'),
+            field=models.FileField(default="", upload_to='document/upload/'),
             preserve_default=False,
         ),
     ]
