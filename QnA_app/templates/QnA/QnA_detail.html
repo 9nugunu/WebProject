@@ -1,3 +1,4 @@
+
 <!-- 네비게이션바 -->
 <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
     <a class="navbar-brand" href="{% url 'main' %}">비교과 홈페이지</a>
@@ -29,8 +30,8 @@
         </div>
     </div>
 </nav>
-{% load static %}
 
+{% load static %}
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -52,7 +53,7 @@
     <div class="card">
         <div class="card-body">
             <h5 class="card-title">{{ boards.title }}</h5>
-            <p class="card-text"><small class="text-muted">{{ boards.created_date | date:"Y-m-d H:i" }}</small></p>
+            <p class="card-text"><small class="text-muted">{{ boards.created_date | date:"Y-m-d H:i" }} 조회수 : {{boards.hits}} </small></p>
             <p class="card-text">{{ boards.content }}</p>
             <p class="card-text">{{boards.docfile}}</p>
             <div class="d-flex justify-content-end">
@@ -62,18 +63,20 @@
             </div></div>
         </div>
     </div>
-    <div class="row mt-3">
-        <div class="col-auto mr-auto"></div>
-        <div class="col-auto">
-            <a class="btn btn-info" href="/post/edit/{{ boards.id }}" role="button">수정</a>
+    {% if request.user == boards.author %}
+        <div class="row mt-3">
+            <div class="col-auto mr-auto"></div>
+            <div class="col-auto">
+                    <a class="btn btn-info" href="{% url 'question_update' boards.id %}" role="button">수정</a>
+            </div>
+            <div class="col-auto">
+                <form id="delete-form" action="{% url 'question_delete' boards.id %}" method="post">
+                <a href="#" class="delete btn btn-sm btn-outline-secondary"
+                    data-uri="{% url 'question_delete' boards.id  %}">삭제</a>
+                </form>
+            </div>
         </div>
-        <div class="col-auto">
-            <form id="delete-form" action="/post/delete/{{ boards.id }}" method="post">
-                <input type="hidden" name="_method" value="delete"/>
-                <button id="delete-btn" type="submit" class="btn btn-danger">삭제</button>
-            </form>
-        </div>
-    </div>
+    {%endif%}
     <br><br>
     <!-- 답변 개수 알림 -->
     <h5>{{ boards.answer_set.count }}개의 답변이 있습니다.</h5>
@@ -117,5 +120,20 @@
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+<!-- jQuery JS -->
+<script src="{% static 'jquery-3.4.1.min.js' %}"></script>
+<!-- Bootstrap JS -->
+<script src="{% static 'bootstrap.min.js' %}"></script>
 </body>
+
+<script type='text/javascript'>
+$(document).ready(function(){
+    $(".delete").on('click', function() {
+        if(confirm("정말로 삭제하시겠습니까?")) {
+            location.href = $(this).data('uri');
+        }
+    });
+});
+</script>
+
 </html>
