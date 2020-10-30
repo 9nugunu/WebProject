@@ -8,7 +8,7 @@ class QnaModel(models.Model):
    content = models.TextField(null=False)
    docfile = models.FileField(default="", upload_to="document/upload/")
    created_date = models.DateTimeField(auto_now_add=True)
-   modified_date = models.DateTimeField(auto_now=True)
+   modified_date = models.DateTimeField(null=True, blank=True)
    hits = models.PositiveIntegerField(default = 0)
 
    def __str__(self):
@@ -25,4 +25,12 @@ class Answer(models.Model):
    question = models.ForeignKey(QnaModel, on_delete=models.CASCADE)
    content = models.TextField(null=False)
    created_date = models.DateTimeField(auto_now_add=True)
-   modified_date = models.DateTimeField(auto_now=True)
+   modified_date = models.DateTimeField(null=True, blank=True)
+
+class Comment(models.Model):
+   author = models.ForeignKey(User, on_delete=models.CASCADE)
+   content = models.TextField()
+   created_date = models.DateTimeField()
+   modified_date = models.DateTimeField(null=True, blank=True)
+   question = models.ForeignKey(QnaModel, null=True, blank=True, on_delete=models.CASCADE)
+   answer = models.ForeignKey(Answer, null=True, blank=True, on_delete=models.CASCADE)
