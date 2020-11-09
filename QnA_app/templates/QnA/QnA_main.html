@@ -42,7 +42,7 @@
 <header>
     <div class="navbar navbar-dark bg-dark shadow-sm mb-3">
         <div class="container d-flex justify-content-between">
-            <a href="{% url 'QnA_main' %}" class="navbar-brand d-flex align-items-center">
+            <a href="{% url 'QnA_app:QnA_main' %}" class="navbar-brand d-flex align-items-center">
                 <strong>QnA 게시판</strong>
             </a>
         </div>
@@ -104,7 +104,7 @@
         {% endif %}
         <!-- 페이지리스트 -->
         {% for page_number in boards.paginator.page_range %}
-        <!-- 페이지리스트에 표시되는 페이지 범위 설정 = 5-->
+        <!-- 페이지리스트에 표시되는 페이지 범위 설정 = 5 -->
         {% if page_number >= boards.number|add:-5 and page_number <= boards.number|add:5 %}
             {% if page_number == boards.number %}
             <li class="page-item active" aria-current="page">

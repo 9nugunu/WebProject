@@ -17,12 +17,18 @@ from django.contrib import admin
 from django.urls import path, include
 import main_app.urls
 import mentoring_app.urls
-import QnA_app.urls
 import login_app.urls
+
+import QnA_app.urls
+from QnA_app.views import base_views
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include(main_app.urls)),
     path('mentoring/', include(mentoring_app.urls)),
     path('QnA/', include(QnA_app.urls)),
     path('common/', include(login_app.urls)),
+
+    path('', base_views.QnA_main, name="QnA_main"),
+
 ]

@@ -43,7 +43,7 @@
 <header>
     <div class="navbar navbar-dark bg-dark shadow-sm mb-3">
         <div class="container d-flex justify-content-between">
-            <a href="{% url 'QnA_main' %}" class="navbar-brand d-flex align-items-center">
+            <a href="{% url 'QnA_app:QnA_main' %}" class="navbar-brand d-flex align-items-center">
                 <strong>QnA 게시판</strong>
             </a>
         </div>
@@ -55,7 +55,6 @@
             <h5 class="card-title">{{ boards.title }}</h5>
             <p class="card-text"><small class="text-muted">{{ boards.created_date | date:"Y-m-d H:i" }} 조회수 : {{boards.hits}} </small></p>
             <p class="card-text">{{ boards.content }}</p>
-            <p class="card-text">{{boards.docfile}}</p>
             <div class="d-flex justify-content-end">
                 <div class="badge badge-light p-2 text-left">
                 <div class="mb-2">{{ boards.author.username }}</div>
@@ -82,16 +81,16 @@
                         {% endif %}
                     </span>
                     {% if request.user == comment.author %}
-                    <a href="{% url 'comment_modify_question' comment.id  %}" class="small">수정</a>,
+                    <a href="{% url 'QnA_app:comment_modify_question' comment.id  %}" class="small">수정</a>,
                     <a href="#" class="small delete" 
-                    data-uri="{% url 'comment_delete_question' comment.id  %}">삭제</a>
+                    data-uri="{% url 'QnA_app:comment_delete_question' comment.id  %}">삭제</a>
                     {% endif %}
                 </div>
             {% endfor %}
             </div>
             {% endif %}
             <div>
-                <a href="{% url 'comment_create_question' boards.id  %}" 
+                <a href="{% url 'QnA_app:comment_create_question' boards.id  %}" 
                 class="small"><small>댓글 추가 ..</small></a>
             </div>
             <!-- 질문 댓글 End -->
@@ -102,12 +101,12 @@
         <div class="row mt-3">
             <div class="col-auto mr-auto"></div>
             <div class="col-auto">
-                    <a class="btn btn-info" href="{% url 'question_update' boards.id %}" role="button">수정</a>
+                    <a class="btn btn-info" href="{% url 'QnA_app:question_update' boards.id %}" role="button">수정</a>
             </div>
             <div class="col-auto">
-                <form id="delete-form" action="{% url 'question_delete' boards.id %}" method="post">
+                <form id="delete-form" action="{% url 'QnA_app:question_delete' boards.id %}" method="post">
                 <a href="#" class="delete btn btn-sm btn-outline-secondary"
-                    data-uri="{% url 'question_delete' boards.id  %}">삭제</a>
+                    data-uri="{% url 'QnA_app:question_delete' boards.id  %}">삭제</a>
                 </form>
             </div>
         </div>
@@ -136,10 +135,10 @@
                     </div>
                     {% if request.user == answer.author %}
                         <div class="my-3">
-                            <a href="{% url 'answer_update' answer.id  %}" 
+                            <a href="{% url 'QnA_app:answer_update' answer.id  %}" 
                             class="btn btn-sm btn-outline-secondary">수정</a>
                              <a href="#" class="delete btn btn-sm btn-outline-secondary " 
-                                data-uri="{% url 'answer_delete' answer.id  %}">삭제</a>
+                                data-uri="{% url 'QnA_app:answer_delete' answer.id  %}">삭제</a>
                         </div>
                     {% endif %}
                 </div>
@@ -159,23 +158,23 @@
                         {% endif %}
                     </span>
                     {% if request.user == comment.author %}
-                    <a href="{% url 'comment_modify_answer' comment.id  %}" class="small">수정</a>,
+                    <a href="{% url 'QnA_app:comment_modify_answer' comment.id  %}" class="small">수정</a>,
                     <a href="#" class="small delete" 
-                    data-uri="{% url 'comment_delete_answer' comment.id  %}">삭제</a>
+                    data-uri="{% url 'QnA_app:comment_delete_answer' comment.id  %}">삭제</a>
                     {% endif %}
                 </div>
             {% endfor %}
         </div>
         {% endif %}
         <div>
-            <a href="{% url 'comment_create_answer' answer.id  %}" 
+            <a href="{% url 'QnA_app:comment_create_answer' answer.id  %}" 
                class="small"><small>댓글 추가 ..</small></a>
         </div>
         <!-- 답변 댓글 끝-->
         {% endfor %}
         </ul>
     </div>
-    <form action="{% url 'answer_create' boards.id %}" method="post" class="my-3">
+    <form action="{% url 'QnA_app:answer_create' boards.id %}" method="post" class="my-3">
         {% csrf_token %}
         {% if form.errors %}
             <div class="alert alert-danger" role="alert">
