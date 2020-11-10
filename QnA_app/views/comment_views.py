@@ -1,6 +1,6 @@
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
-from django.shortcuts import render, get_object_or_404, redirect
+from django.shortcuts import render, get_object_or_404, redirect, resolve_url
 from django.utils import timezone
 
 from ..forms import CommentForm
@@ -17,7 +17,9 @@ def comment_create_question(request, pk):
             comment.created_date = timezone.now()
             comment.question = question
             comment.save()
-            return redirect('QnA_detail', pk=question.id)
+            return redirect('{}#comment_{}'.format(
+                resolve_url('QnA_app:QnA_detail', pk=question.id),
+                comment.id))
     else:
         form = CommentForm()
     context = {'form': form}
@@ -37,7 +39,9 @@ def comment_modify_question(request, comment_id):
             comment.author = request.user
             comment.modified_date = timezone.now()
             comment.save()
-            return redirect('QnA_detail', pk=comment.question.id)
+            return redirect('{}#comment_{}'.format(
+                resolve_url('QnA_app:QnA_detail', pk=comment.question.id),
+                comment.id))
     else:
         form = CommentForm(instance=comment)
     context = {'form': form}
@@ -48,10 +52,10 @@ def comment_delete_question(request, comment_id):
     comment = get_object_or_404(Comment, pk=comment_id)
     if request.user != comment.author:
         messages.error(request, '댓글삭제권한이 없습니다')
-        return redirect('QnA_detail', pk=comment.pk)
+        return redirect('QnA_app:QnA_detail', pk=comment.pk)
     else:
         comment.delete()
-    return redirect('QnA_detail', pk=comment.pk)
+    return redirect('QnA_app:QnA_detail', pk=comment.pk)
 
 @login_required(login_url='login_app:login')
 def comment_create_answer(request, answer_id):
@@ -64,7 +68,9 @@ def comment_create_answer(request, answer_id):
             comment.created_date = timezone.now()
             comment.answer = answer
             comment.save()
-            return redirect('QnA_detail', pk=comment.answer.question.id)
+            return redirect('{}#comment_{}'.format(
+                resolve_url('QnA_app:QnA_detail', pk=comment.answer.question.id),
+                comment.id))
     else:
         form = CommentForm()
     context = {'form': form}
@@ -76,7 +82,7 @@ def comment_modify_answer(request, comment_id):
     comment = get_object_or_404(Comment, pk=comment_id)
     if request.user != comment.author:
         messages.error(request, '댓글수정권한이 없습니다')
-        return redirect('QnA_detail', pk=comment.answer.question.id)
+        return redirect('QnA_app:QnA_detail', pk=comment.answer.question.id)
 
     if request.method == "POST":
         form = CommentForm(request.POST, instance=comment)
@@ -85,7 +91,9 @@ def comment_modify_answer(request, comment_id):
             comment.author = request.user
             comment.modified_date = timezone.now()
             comment.save()
-            return redirect('QnA_detail', pk=comment.answer.question.id)
+            return redirect('{}#comment_{}'.format(
+                resolve_url('QnA_detail', pk=comment.answer.question.id),
+                comment.id))
     else:
         form = CommentForm(instance=comment)
     context = {'form': form}

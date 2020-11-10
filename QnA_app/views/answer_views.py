@@ -1,6 +1,6 @@
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
-from django.shortcuts import render, get_object_or_404, redirect
+from django.shortcuts import render, get_object_or_404, redirect, resolve_url
 from django.utils import timezone
 
 from ..forms import AnswerForm
@@ -17,7 +17,8 @@ def answer_create(request, pk):
             answer.created_date = timezone.now()
             answer.question = question
             answer.save()
-            return redirect('QnA_detail', pk=pk)
+            return redirect('{}#answer_{}'.format(
+                resolve_url('QnA_app:QnA_detail', pk=pk), answer.id))
     else:
         form = AnswerForm()
     context = {'question': question, 'form': form}
@@ -37,7 +38,8 @@ def answer_update(request, answer_id):
             answer.author = request.user
             answer.modified_date = timezone.now()
             answer.save()
-            return redirect('QnA_detail', pk=answer.question.id)
+            return redirect('{}#answer_{}'.format(
+                resolve_url('QnA_app:QnA_detail', pk=answer.question.id), answer.id))
     else:
         form = AnswerForm(instance=answer)
     context = {'answer': answer, 'form': form}
