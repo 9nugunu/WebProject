@@ -22,6 +22,9 @@ import login_app.urls
 import QnA_app.urls
 from QnA_app.views import base_views
 
+from django.conf import settings
+from django.conf.urls.static import static
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include(main_app.urls)),
@@ -30,5 +33,10 @@ urlpatterns = [
     path('common/', include(login_app.urls)),
 
     path('', base_views.QnA_main, name="QnA_main"),
+    path('ckeditor/', include('ckeditor_uploader.urls')),
+    path('summernote/', include('django_summernote.urls')),
 
 ]
+
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+

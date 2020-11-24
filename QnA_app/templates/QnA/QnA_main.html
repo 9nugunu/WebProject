@@ -49,23 +49,32 @@
         </div>
     </div>
 </header>
+
 <div class="container">
     <!-- 양쪽정렬 -->
     <div class="row justify-content-between my-3">
-     <div class="col-2">
+    <div class="col-2">
             <select class="form-control so">
                 <option value="recent" {% if so == 'recent' %}selected{% endif %}>최신순</option>
-                <!-- <option value="recommend" {% if so == 'recommend' %}selected{% endif %}>추천순</option> -->
+                <option value="author" {% if so == 'author' %}selected{% endif %}>작성자</option>
                 <option value="popular" {% if so == 'popular' %}selected{% endif %}>조회수</option>
             </select>
+    </div>
+
+    <div class="col-4 input-group">
+            <div class="col-5">
+            <select class="form-control search_menu">
+                <option value="title" {% if search_menu == 'title' %}selected{% endif %}>제목</option>
+                <option value="author" {% if search_menu == 'author' %}selected{% endif %}>작성자</option>
+                <option value="content" {% if search_menu == 'content' %}selected{% endif %}>내용</option>
+            </select>
         </div>
-        <div class="col-4 input-group">
-            <input type="text" class="form-control kw" value="{{ kw|default_if_none:'' }}">
-            <div class="input-group-append">
-                <button class="btn btn-outline-secondary" type="button" id="btn_search">찾기</button>
-            </div>
+        <input type="text" class="form-control search" value="{{ search|default_if_none:'' }}">
+        <div class="input-group-append">
+            <button class="btn btn-outline-secondary" type="button" id="btn_search">찾기</button>
         </div>
     </div>
+</div>
     <table class="table">
         <thead class="thead-light">
         <tr class="text-center">
@@ -155,8 +164,8 @@
             <a class="btn btn-primary" href="/QnA/post" role="button">글쓰기</a>
         </div>
     </div>
-    <form id="searchForm" method="get" action="{% url 'QnA_app:QnA_main' %}">
-    <input type="hidden" id="kw" name="kw" value="{{ kw|default_if_none:'' }}">
+<form id="searchForm" method="get" action="{% url 'QnA_app:QnA_main' %}">
+    <input type="hidden" id="search" name="search" value="{{ search|default_if_none:'' }}">
     <input type="hidden" id="page" name="page" value="{{ page }}">
     <input type="hidden" id="so" name="so" value="{{ so }}">
 </form>
@@ -183,7 +192,7 @@ $(document).ready(function(){
     });
 
     $("#btn_search").on('click', function() {
-        $("#kw").val($(".kw").val());
+        $("#search").val($(".search").val());
         $("#page").val(1);  // 검색버튼을 클릭할 경우 1페이지부터 조회한다.
         $("#searchForm").submit();
     });

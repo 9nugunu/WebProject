@@ -5,6 +5,7 @@ from django.utils import timezone
 
 from ..forms import AnswerForm
 from ..models import QnaModel, Answer
+from ckeditor.widgets import CKEditorWidget
 
 @login_required(login_url='login_app:login')
 def answer_create(request, pk):
@@ -29,7 +30,7 @@ def answer_update(request, answer_id):
     answer = get_object_or_404(Answer, pk=answer_id)
     if request.user != answer.author:
         messages.error(request, '수정권한이 없습니다')
-        return redirect('QnA_detail', pk=answer.question.id)
+        return redirect('QnA_app:QnA_detail', pk=answer.question.id)
 
     if request.method == "POST":
         form = AnswerForm(request.POST, instance=answer)
@@ -52,4 +53,4 @@ def answer_delete(request, answer_id):
         messages.error(request, '삭제권한이 없습니다')
     else:
         answer.delete()
-    return redirect('QnA_detail', pk=answer.question.id)
+    return redirect('QnA_app:QnA_detail', pk=answer.question.id)
