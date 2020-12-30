@@ -1,0 +1,87 @@
+
+<!DOCTYPE html><!--  This site was created in Webflow. http://www.webflow.com  -->
+<!--  Last Published: Tue Dec 22 2020 04:18:13 GMT+0000 (Coordinated Universal Time)  -->
+{% extends 'base.html'%}
+{% load static %}
+<html data-wf-page="5fdf5b16ab6df32d7c9b9f8f" data-wf-site="5fdf5b16ab6df35ee79b9f8e">
+
+<body>
+{% block content%}
+
+  <div class="elements-section-headline-wrap">
+    <div id="Hero" class="section detail">
+      <div class="w-layout-grid grid">
+        <div id="w-node-391edaf00c22-e6c52609" class="elements-headline-wrap">
+          <div class="sizejumbo-text">D-sum<br></div>
+          <p class="detail_page">전자 및 정보공학과<br>소프트웨어 튜터링 프로그램</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="section">
+    <div class="w-layout-grid blog1-grid">
+      <div id="w-node-11da51d85b8a-e6c52609" class="blog1-headline-wrap detail_page">
+        <div class="size3-text">All Posts<br></div>
+      </div>
+      <div id="w-node-7441637cf85e-e6c52609" class="detail_page detail_component">
+
+      {% for WriteDsums in WriteDsum %}
+      <div class="detail_page detail_component">
+        <a href="#" class="size4-link">{{ WriteDsums.title }}</a>
+        <div class="date_detail">
+          <div class="text-label big">게시일 :</div>
+          <div class="text-label date">{{ WriteDsums.created_date }}</div>
+          <div class="nav-kit-divider"></div>
+          <div class="text-label big">신청마감일 :</div>
+          <div class="text-label date">{{ WriteDsums.end_date }}</div>          
+          <div class="text-label big">URL</div>
+          <div class="text-label date">{{ WriteDsums.link }}</div>   
+        </div>
+        <div class="blog1-button-wrap">
+          <a data-w-id="e3f22483-798b-3788-463d-7441637cf86a" href="{{ WriteDsums.link }}" class="button-small register w-inline-block">
+            <div class="button-label">Read more</div><img src="{% static 'images/Arrow2x.svg' %}" alt="" class="button-arrow">
+          </a>
+        </div>
+      </div>
+      {% endfor %}
+
+
+      <!--<div class="detail_page detail_component">
+        <a href="#" class="size4-link">각종 서류 제출 관련 공지</a>
+        <div class="date_detail">
+          <div class="text-label big">게시일 :</div>
+          <div class="text-label date">2020/12/10</div>
+          <div class="nav-kit-divider"></div>
+          <div class="text-label big">신청마감일 :</div>
+          <div class="text-label date">2020/12/31</div>
+        </div>
+        <div class="paragraph-70">------------------------------------------------------------------------------------------------------------------------------------------------------------------<br>--------------------------------------------------------------------------(내용 요약)------------------------------------------------------------------------------</div>
+        <div class="blog1-button-wrap">
+          <a data-w-id="12c9b3df-5f7a-b163-4e06-f872037b80f1" href="#" class="button-small submit w-inline-block">
+            <div class="button-label">Read more</div><img src="{% static 'images/Arrow2x.svg' %}" alt="" class="button-arrow">
+          </a>
+        </div>
+      </div>
+      <div class="detail_page detail_component">
+        <a href="#" class="size4-link">기타 공지사항</a>
+        <div class="date_detail">
+          <div class="text-label big">게시일 :</div>
+          <div class="text-label date">2020/12/10</div>
+          <div class="nav-kit-divider"></div>
+          <div class="text-label big">신청마감일 :</div>
+          <div class="text-label date">2020/12/31</div>
+        </div>
+        <div class="paragraph-70">------------------------------------------------------------------------------------------------------------------------------------------------------------------<br>--------------------------------------------------------------------------(내용 요약)------------------------------------------------------------------------------</div>
+        <div class="blog1-button-wrap">
+          <a data-w-id="f9ef15d0-6893-c5ae-03fd-813eda5bbe5d" href="#" class="button-small etc w-inline-block">
+            <div class="button-label">Read more</div><img src="{% static 'images/Arrow2x.svg'%}" alt="" class="button-arrow">
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>-->
+  
+  {% include 'footer.html'%}
+  {% endblock %}
+</body>
+</html>

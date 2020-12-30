@@ -3,6 +3,16 @@ from django.contrib.auth.models import User
 from ckeditor_uploader.fields import RichTextUploadingField
  #Create your models here.
 
+class Category(models.Model):
+    category_name = models.CharField(max_length=30)
+    parent = models.ForeignKey('self', on_delete=models.CASCADE, blank=True, null=True)
+
+    class Meta:
+        unique_together = ["category_name"]
+    
+    def __str__(self):
+        return self.category_name
+
 class QnaModel(models.Model):
    author = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
    title = models.CharField(max_length=100, null=False)
@@ -10,6 +20,7 @@ class QnaModel(models.Model):
    created_date = models.DateTimeField(auto_now_add=True)
    modified_date = models.DateTimeField(null=True, blank=True)
    hits = models.PositiveIntegerField(default = 0)
+   category = models.ForeignKey(Category, on_delete=models.CASCADE, null=True)
 
    def __str__(self):
       return self.title
@@ -18,7 +29,6 @@ class QnaModel(models.Model):
    def counter(self):
       self.hits = self.hits + 1
       self.save()
-
 
 class Answer(models.Model):
    author = models.ForeignKey(User, on_delete=models.CASCADE, null=True)

@@ -1,0 +1,475 @@
+{% load static %}
+<div class="wrapper home">
+    <div class="section notice">
+      <div class="w-layout-grid product5-grid">
+        <div id="w-node-6baf2e511555-7c9b9f8f" class="home-sections-label">
+          <div class="label black-label notice">Notice</div>
+          <div class="size1-text notice">공지사항</div>
+          <p class="paragraph-70">전자 및 정보공학과의<br>비교과 프로그램의 일정과<br>소식을 알려드립니다.</p>
+          <a href="notice-detail-page.html" class="more">More -&gt;</a>
+        </div>
+
+        <div id="w-node-c77056d1d052-7c9b9f8f" class="w-layout-grid homepage-layouts-grid">
+
+          {% for WriteDsums in WriteDsum.all %}
+          <div>
+            <div class="image-wrap">
+              <a data-w-id="4148afcc-97b6-a7cf-e5da-bf1a0df98f84" style="opacity:0" href="{{ WriteDsums.link }}" class="item-overlay w-inline-block">
+                <div class="button-small white-small">
+                  <div>Read More</div>
+                </div>
+              </a>
+              <div class="home-item-wrap">
+                <img src="{{ WriteDsums.image.url }}" sizes="(max-width: 479px) 76vw, (max-width: 767px) 11vw, (max-width: 991px) 9vw, (max-width: 1919px) 6vw, 7vw" height="150" width="760" srcset="{{ WriteDsums.image.url }} 500w, {{ WriteDsums.image.url }} 800w, {{ WriteDsums.image.url }} 1080w, {{ WriteDsums.image.url }} 1520w" alt="" class="home-image">
+              </div>
+            </div>
+            <div class="product3-content-wrap">
+              <a href="{{ WriteDsums.link }}" class="size4-link">신청하기</a>
+            </div>
+          </div>
+          {% endfor %}
+          
+          <div>
+            <div class="image-wrap">
+              <a data-w-id="4148afcc-97b6-a7cf-e5da-bf1a0df98f84" style="opacity:0" href="#" class="item-overlay w-inline-block">
+                <div class="button-small white-small">
+                  <div>Read More</div>
+                </div>
+              </a>
+              <div class="home-item-wrap">
+                <img src="{% static 'images/curt_1.png'%}" sizes="(max-width: 479px) 76vw, (max-width: 767px) 11vw, (max-width: 991px) 9vw, (max-width: 1919px) 6vw, 7vw" height="150" width="760" srcset="{% static 'images/curt_1-p-500.png'%} 500w, {% static 'images/curt_1-p-800.png' %} 800w, {% static 'images/curt_1-p-1080.png' %} 1080w, {% static 'images/curt_1.png' %} 1520w" alt="" class="home-image">
+              </div>
+            </div>
+            <div class="product3-content-wrap">
+              <a href="/1-hero" class="size4-link">신청하기</a>
+            </div>
+          </div>
+
+          <div>
+            <div class="image-wrap">
+              <a data-w-id="4148afcc-97b6-a7cf-e5da-bf1a0df98f84" style="opacity:0" href="#" class="item-overlay w-inline-block">
+                <div class="button-small white-small">
+                  <div>Read More</div>
+                </div>
+              </a>
+              <div class="home-item-wrap">
+                <img src="{% static 'images/curt_1.png'%}" sizes="(max-width: 479px) 76vw, (max-width: 767px) 11vw, (max-width: 991px) 9vw, (max-width: 1919px) 6vw, 7vw" height="150" width="760" srcset="{% static 'images/curt_1-p-500.png'%} 500w, {% static 'images/curt_1-p-800.png' %} 800w, {% static 'images/curt_1-p-1080.png' %} 1080w, {% static 'images/curt_1.png' %} 1520w" alt="" class="home-image">
+              </div>
+            </div>
+            <div class="product3-content-wrap">
+              <a href="/1-hero" class="size4-link">신청하기</a>
+            </div>
+          </div>
+
+          <div>
+            <div class="image-wrap">
+              <a data-w-id="78c260b5-3e68-6f1b-ea19-a27862d7a922" style="opacity:0" href="#" class="item-overlay w-inline-block">
+                <div class="button-small white-small">
+                  <div>Read More</div>
+                </div>
+              </a>
+              <div class="home-item-wrap">
+                <img src="{% static 'images/비교과-배너-템플릿_보라_1.png' %}" sizes="(max-width: 479px) 76vw, (max-width: 767px) 11vw, (max-width: 991px) 9vw, (max-width: 1919px) 6vw, 7vw" height="150" width="760" srcset="{% static 'images/비교과-배너-템플릿_보라_1-p-500.png' %} 500w, {% static 'images/비교과-배너-템플릿_보라_1-p-800.png' %} 800w, {% static 'images/비교과-배너-템플릿_보라_1-p-1080.png' %} 1080w, {% static 'images/비교과-배너-템플릿_보라_1.png' %} 1520w" alt="" class="home-image">
+              </div>
+            </div>
+            <div class="product3-content-wrap">
+              <a href="/1-hero" class="size4-link">대제목</a>
+            </div>
+          </div>
+          <div>
+            <div class="image-wrap">
+              <a data-w-id="f9952882-ac3e-a00d-2df3-5100125e60b5" style="opacity:0" href="#" class="item-overlay w-inline-block">
+                <div class="button-small white-small">
+                  <div>View Category</div>
+                </div>
+              </a>
+              <div class="home-item-wrap">
+                <img src="{% static 'images/비교과-배너-템플릿_보라_1.png' %}" sizes="(max-width: 479px) 76vw, (max-width: 767px) 11vw, (max-width: 991px) 9vw, (max-width: 1919px) 6vw, 7vw" height="150" width="760" srcset="{% static 'images/비교과-배너-템플릿_보라_1-p-500.png' %} 500w, {% static 'images/비교과-배너-템플릿_보라_1-p-800.png' %} 800w, {% static 'images/비교과-배너-템플릿_보라_1-p-1080.png' %} 1080w, {% static 'images/비교과-배너-템플릿_보라_1.png' %} 1520w" alt="" class="home-image">
+              </div>
+            </div>
+            <div class="product3-content-wrap">
+              <a href="/1-hero" class="size4-link">대제목</a>
+            </div>
+          </div>
+          <div>
+            <div class="image-wrap">
+              <a data-w-id="5b222b60-cd13-9fe3-9005-6bd9a5f5346c" style="opacity:0" href="#" class="item-overlay w-inline-block">
+                <div class="button-small white-small">
+                  <div>View Category</div>
+                </div>
+              </a>
+              <div class="home-item-wrap">
+                <img src="{% static 'images/비교과-배너-템플릿_보라_1.png' %}" sizes="(max-width: 479px) 76vw, (max-width: 767px) 11vw, (max-width: 991px) 9vw, (max-width: 1919px) 6vw, 7vw" height="150" width="760" srcset="{% static 'images/비교과-배너-템플릿_보라_1-p-500.png' %} 500w, {% static 'images/비교과-배너-템플릿_보라_1-p-800.png' %} 800w, {% static 'images/비교과-배너-템플릿_보라_1-p-1080.png' %} 1080w, {% static 'images/비교과-배너-템플릿_보라_1.png' %} 1520w" alt="" class="home-image">
+              </div>
+            </div>
+            <div class="product3-content-wrap">
+              <a href="/1-hero" class="size4-link">대제목</a>
+            </div>
+          </div>
+          <div>
+            <div class="image-wrap">
+              <a data-w-id="33e8a41c-3421-910b-cd96-995e810c8d95" style="opacity:0" href="#" class="item-overlay w-inline-block">
+                <div class="button-small white-small">
+                  <div>View Category</div>
+                </div>
+              </a>
+              <div class="home-item-wrap">
+                <img src="{% static 'images/비교과-배너-템플릿_빨강_1.png' %}" sizes="(max-width: 479px) 76vw, (max-width: 767px) 11vw, (max-width: 991px) 9vw, (max-width: 1919px) 6vw, 7vw" height="150" width="760" srcset="{% static 'images/비교과-배너-템플릿_빨강_1-p-500.png' %} 500w, {% static 'images/비교과-배너-템플릿_빨강_1-p-800.png' %} 800w, {% static 'images/비교과-배너-템플릿_빨강_1-p-1080.png' %} 1080w, {% static 'images/비교과-배너-템플릿_빨강_1.png' %} 1520w" alt="" class="home-image">
+              </div>
+            </div>
+            <div class="product3-content-wrap">
+              <a href="/1-hero" class="size4-link">대제목</a>
+            </div>
+          </div>
+          <div>
+            <div class="image-wrap">
+              <a data-w-id="5988bae9-2034-ef8f-8c71-c1cc54748a7c" style="opacity:0" href="#" class="item-overlay w-inline-block">
+                <div class="button-small white-small">
+                  <div>View Category</div>
+                </div>
+              </a>
+              <div class="home-item-wrap">
+                <img src="{% static 'images/비교과-배너-템플릿_빨강_1.png' %}" sizes="(max-width: 479px) 76vw, (max-width: 767px) 11vw, (max-width: 991px) 9vw, (max-width: 1919px) 6vw, 7vw" height="150" width="760" srcset="{% static 'images/비교과-배너-템플릿_빨강_1-p-500.png' %} 500w, {% static 'images/비교과-배너-템플릿_빨강_1-p-800.png' %} 800w, {% static 'images/비교과-배너-템플릿_빨강_1-p-1080.png' %} 1080w, {% static 'images/비교과-배너-템플릿_빨강_1.png' %} 1520w" alt="" class="home-image">
+              </div>
+            </div>
+            <div class="product3-content-wrap">
+              <a href="/1-hero" class="size4-link">대제목</a>
+            </div>
+          </div>
+          <div>
+            <div class="image-wrap">
+              <a data-w-id="11884ff1-6fcb-c721-7f4c-17478500a9ef" style="opacity:0" href="#" class="item-overlay w-inline-block">
+                <div class="button-small white-small">
+                  <div>View Category</div>
+                </div>
+              </a>
+              <div class="home-item-wrap">
+                <img src="{% static 'images/비교과-배너-템플릿_빨강_1.png' %}" sizes="(max-width: 479px) 76vw, (max-width: 767px) 11vw, (max-width: 991px) 9vw, (max-width: 1919px) 6vw, 7vw" height="150" width="760" srcset="{% static 'images/비교과-배너-템플릿_빨강_1-p-500.png' %} 500w, {% static 'images/비교과-배너-템플릿_빨강_1-p-800.png' %} 800w, {% static 'images/비교과-배너-템플릿_빨강_1-p-1080.png' %} 1080w, {% static 'images/비교과-배너-템플릿_빨강_1.png' %} 1520w" alt="" class="home-image">
+              </div>
+            </div>
+            <div class="product3-content-wrap">
+              <a href="/1-hero" class="size4-link">대제목</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- D-SUM 공지 시작-->
+  <div class="wrapper home">
+    <div class="section notice">
+      <div class="w-layout-grid product5-grid">
+        <div id="w-node-e24cf9bb04d1-7c9b9f8f" class="home-sections-label">
+          <div class="label black-label d_sum">SoftWare tutoring</div>
+          <div class="size1-text">D-sum</div>
+          <p class="paragraph-70">학생들 간의 멘토링을 통한<br>SW역량 강화를 목표로 하는<br>비교과 튜터링 프로그램입니다.<br><br>C언어, Python, matlab등을 이용한<br>다양한 프로그래밍 학습과<br>튜터링프로그램을 진행합니다.</p>
+          <a href="dsum-detail-page.html" class="more">More -&gt;</a>
+        </div>
+        <div id="w-node-e24cf9bb04d8-7c9b9f8f" class="w-layout-grid homepage-layouts-grid">
+          <div>
+            <div class="image-wrap">
+              <a data-w-id="d40cd838-69c9-f14a-9d7e-c33897547bcd" style="opacity:0" href="#" class="item-overlay w-inline-block">
+                <div class="button-small white-small">
+                  <div>View Category</div>
+                </div>
+              </a>
+              <div class="home-item-wrap">
+                <img src="{% static 'images/비교과-배너-템플릿_파랑_1.png' %}" sizes="(max-width: 479px) 33vw, (max-width: 767px) 11vw, (max-width: 991px) 8vw, (max-width: 1919px) 5vw, 6vw" height="150" width="760" srcset="{% static 'images/비교과-배너-템플릿_파랑_1-p-500.png' %} 500w, {% static 'images/비교과-배너-템플릿_파랑_1-p-800.png' %} 800w, {% static 'images/비교과-배너-템플릿_파랑_1-p-1080.png' %} 1080w, {% static 'images/비교과-배너-템플릿_파랑_1.png' %} 1520w" alt="" class="home-image">
+              </div>
+            </div>
+            <div class="product3-content-wrap">
+              <a href="/1-hero" class="size4-link">대제목</a>
+            </div>
+          </div>
+          <div>
+            <div class="image-wrap">
+              <a data-w-id="e94443ff-c3f5-e22b-b3cb-d8f7a2688216" style="opacity:0" href="#" class="item-overlay w-inline-block">
+                <div class="button-small white-small">
+                  <div>View Category</div>
+                </div>
+              </a>
+              <div class="home-item-wrap">
+              <img src="{% static 'images/비교과-배너-템플릿_파랑_1.png' %}" sizes="(max-width: 479px) 33vw, (max-width: 767px) 11vw, (max-width: 991px) 8vw, (max-width: 1919px) 5vw, 6vw" height="150" width="760" srcset="{% static 'images/비교과-배너-템플릿_파랑_1-p-500.png' %} 500w, {% static 'images/비교과-배너-템플릿_파랑_1-p-800.png' %} 800w, {% static 'images/비교과-배너-템플릿_파랑_1-p-1080.png' %} 1080w, {% static 'images/비교과-배너-템플릿_파랑_1.png' %} 1520w" alt="" class="home-image">
+              </div>
+            </div>
+            <div class="product3-content-wrap">
+              <a href="/1-hero" class="size4-link">대제목</a>
+            </div>
+          </div>
+          <div>
+            <div class="image-wrap">
+              <a data-w-id="98beb867-5d84-c199-b69f-203d6765c04b" style="opacity:0" href="#" class="item-overlay w-inline-block">
+                <div class="button-small white-small">
+                  <div>View Category</div>
+                </div>
+              </a>
+              <div class="home-item-wrap">
+              <img src="{% static 'images/비교과-배너-템플릿_파랑_1.png' %}" sizes="(max-width: 479px) 33vw, (max-width: 767px) 11vw, (max-width: 991px) 8vw, (max-width: 1919px) 5vw, 6vw" height="150" width="760" srcset="{% static 'images/비교과-배너-템플릿_파랑_1-p-500.png' %} 500w, {% static 'images/비교과-배너-템플릿_파랑_1-p-800.png' %} 800w, {% static 'images/비교과-배너-템플릿_파랑_1-p-1080.png' %} 1080w, {% static 'images/비교과-배너-템플릿_파랑_1.png' %} 1520w" alt="" class="home-image">
+              </div>
+            </div>
+            <div class="product3-content-wrap">
+              <a href="/1-hero" class="size4-link">대제목</a>
+            </div>
+          </div>
+          <div>
+            <div class="image-wrap">
+              <a data-w-id="c7f5b26c-1ae6-7822-eedd-595a442e2ad3" style="opacity:0" href="#" class="item-overlay w-inline-block">
+                <div class="button-small white-small">
+                  <div>View Category</div>
+                </div>
+              </a>
+              <div class="home-item-wrap">
+              <img src="{% static 'images/비교과-배너-템플릿_노랑_1.png' %}" sizes="(max-width: 479px) 33vw, (max-width: 767px) 11vw, (max-width: 991px) 8vw, (max-width: 1919px) 5vw, 6vw" height="150" width="760" srcset="{% static 'images/비교과-배너-템플릿_노랑_1-p-500.png' %} 500w, {% static 'images/비교과-배너-템플릿_노랑_1-p-800.png' %} 800w, {% static 'images/비교과-배너-템플릿_노랑_1-p-1080.png' %} 1080w, {% static 'images/비교과-배너-템플릿_노랑_1.png' %} 1520w" alt="" class="home-image">
+              </div>
+            </div>
+            <div class="product3-content-wrap">
+              <a href="/1-hero" class="size4-link">대제목</a>
+            </div>
+          </div>
+          <div>
+            <div class="image-wrap">
+              <a data-w-id="4cfdad26-b45d-9489-fc7a-46d9bd229aff" style="opacity:0" href="#" class="item-overlay w-inline-block">
+                <div class="button-small white-small">
+                  <div>View Category</div>
+                </div>
+              </a>
+              <div class="home-item-wrap">
+              <img src="{% static 'images/비교과-배너-템플릿_노랑_1.png' %}" sizes="(max-width: 479px) 33vw, (max-width: 767px) 11vw, (max-width: 991px) 8vw, (max-width: 1919px) 5vw, 6vw" height="150" width="760" srcset="{% static 'images/비교과-배너-템플릿_노랑_1-p-500.png' %} 500w, {% static 'images/비교과-배너-템플릿_노랑_1-p-800.png' %} 800w, {% static 'images/비교과-배너-템플릿_노랑_1-p-1080.png' %} 1080w, {% static 'images/비교과-배너-템플릿_노랑_1.png' %} 1520w" alt="" class="home-image">
+              </div>
+            </div>
+            <div class="product3-content-wrap">
+              <a href="/1-hero" class="size4-link">대제목</a>
+            </div>
+          </div>
+          <div>
+            <div class="image-wrap">
+              <a data-w-id="1bc8ef3e-5fbb-3463-f895-72b7eab76ff1" style="opacity:0" href="#" class="item-overlay w-inline-block">
+                <div class="button-small white-small">
+                  <div>View Category</div>
+                </div>
+              </a>
+              <div class="home-item-wrap">
+              <img src="{% static 'images/비교과-배너-템플릿_노랑_1.png' %}" sizes="(max-width: 479px) 33vw, (max-width: 767px) 11vw, (max-width: 991px) 8vw, (max-width: 1919px) 5vw, 6vw" height="150" width="760" srcset="{% static 'images/비교과-배너-템플릿_노랑_1-p-500.png' %} 500w, {% static 'images/비교과-배너-템플릿_노랑_1-p-800.png' %} 800w, {% static 'images/비교과-배너-템플릿_노랑_1-p-1080.png' %} 1080w, {% static 'images/비교과-배너-템플릿_노랑_1.png' %} 1520w" alt="" class="home-image">
+              </div>
+            </div>
+            <div class="product3-content-wrap">
+              <a href="/1-hero" class="size4-link">대제목</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 전공 1000제 공지 시작-->
+  <div class="wrapper home">
+    <div class="section notice">
+      <div class="w-layout-grid product5-grid">
+        <div id="w-node-36909938c51a-7c9b9f8f" class="home-sections-label">
+          <div class="label black-label _1000q_major">1000Q major</div>
+          <div class="size1-text major_1000">전공 1000제</div>
+          <p class="paragraph-70">실제 전공과목에 대한<br>역량을 향상시키고,<br>연습할 수 있는 공간입니다.<br><br>해당 과목의 교수님들과 학생들이<br>함께 문제를 만들어가고<br>검증을 합니다.</p>
+          <a href="1000q-detail-page.html" class="more">More -&gt;</a>
+        </div>
+        <div id="w-node-36909938c521-7c9b9f8f" class="w-layout-grid homepage-layouts-grid">
+          <div>
+            <div class="image-wrap">
+              <a data-w-id="456b6282-72e7-8c43-1200-32d7d81cd706" style="opacity:0" href="#" class="item-overlay w-inline-block">
+                <div class="button-small white-small">
+                  <div>View Category</div>
+                </div>
+              </a>
+              <div class="home-item-wrap">
+                <img src="{% static 'images/비교과-배너-템플릿_초록_1.png' %}" sizes="(max-width: 479px) 33vw, (max-width: 767px) 11vw, (max-width: 991px) 8vw, (max-width: 1919px) 5vw, 6vw" height="150" width="760" srcset="{% static 'images/비교과-배너-템플릿_초록_1-p-500.png' %} 500w, {% static 'images/비교과-배너-템플릿_초록_1-p-800.png' %} 800w, {% static 'images/비교과-배너-템플릿_초록_1-p-1080.png' %} 1080w, {% static 'images/비교과-배너-템플릿_초록_1.png' %} 1520w" alt="" class="home-image">
+              </div>
+            </div>
+            <div class="product3-content-wrap">
+              <a href="/1-hero" class="size4-link">대제목</a>
+            </div>
+          </div>
+          <div>
+            <div class="image-wrap">
+              <a data-w-id="8752a410-4fa2-7a7c-2c5d-bcd545d60c85" style="opacity:0" href="#" class="item-overlay w-inline-block">
+                <div class="button-small white-small">
+                  <div>View Category</div>
+                </div>
+              </a>
+              <div class="home-item-wrap">
+                <img src="{% static 'images/비교과-배너-템플릿_초록_1.png' %}" sizes="(max-width: 479px) 33vw, (max-width: 767px) 11vw, (max-width: 991px) 8vw, (max-width: 1919px) 5vw, 6vw" height="150" width="760" srcset="{% static 'images/비교과-배너-템플릿_초록_1-p-500.png' %} 500w, {% static 'images/비교과-배너-템플릿_초록_1-p-800.png' %} 800w, {% static 'images/비교과-배너-템플릿_초록_1-p-1080.png' %} 1080w, {% static 'images/비교과-배너-템플릿_초록_1.png' %} 1520w" alt="" class="home-image">
+              </div>
+            </div>
+            <div class="product3-content-wrap">
+              <a href="/1-hero" class="size4-link">대제목</a>
+            </div>
+          </div>
+          <div>
+            <div class="image-wrap">
+              <a data-w-id="ac4d3c7d-8858-cba3-9816-eeea38c0e07b" style="opacity:0" href="#" class="item-overlay w-inline-block">
+                <div class="button-small white-small">
+                  <div>View Category</div>
+                </div>
+              </a>
+              <div class="home-item-wrap">
+                <img src="{% static 'images/비교과-배너-템플릿_초록_1.png' %}" sizes="(max-width: 479px) 33vw, (max-width: 767px) 11vw, (max-width: 991px) 8vw, (max-width: 1919px) 5vw, 6vw" height="150" width="760" srcset="{% static 'images/비교과-배너-템플릿_초록_1-p-500.png' %} 500w, {% static 'images/비교과-배너-템플릿_초록_1-p-800.png' %} 800w, {% static 'images/비교과-배너-템플릿_초록_1-p-1080.png' %} 1080w, {% static 'images/비교과-배너-템플릿_초록_1.png' %} 1520w" alt="" class="home-image">
+              </div>
+            </div>
+            <div class="product3-content-wrap">
+              <a href="/1-hero" class="size4-link">대제목</a>
+            </div>
+          </div>
+          <div>
+            <div class="image-wrap">
+              <a data-w-id="75cf92c3-cf1b-57e6-b093-3eb278e6b8e7" style="opacity:0" href="#" class="item-overlay w-inline-block">
+                <div class="button-small white-small">
+                  <div>View Category</div>
+                </div>
+              </a>
+              <div class="home-item-wrap">
+                <img src="{% static 'images/비교과-배너-템플릿_1.png'%}" sizes="(max-width: 479px) 33vw, (max-width: 767px) 11vw, (max-width: 991px) 8vw, (max-width: 1919px) 5vw, 6vw" height="150" width="760" srcset="{% static 'images/비교과-배너-템플릿_1-p-500.png' %} 500w, {% static 'images/비교과-배너-템플릿_1-p-800.png' %} 800w, {% static 'images/비교과-배너-템플릿_1-p-1080.png' %} 1080w, {% static 'images/비교과-배너-템플릿_1.png' %} 1520w" alt="" class="home-image">
+              </div>
+            </div>
+            <div class="product3-content-wrap">
+              <a href="/1-hero" class="size4-link">대제목</a>
+            </div>
+          </div>
+          <div>
+            <div class="image-wrap">
+              <a data-w-id="bf5fa6e9-9153-e9f6-2cea-e150f9c0d81c" style="opacity:0" href="#" class="item-overlay w-inline-block">
+                <div class="button-small white-small">
+                  <div>View Category</div>
+                </div>
+              </a>
+              <div class="home-item-wrap">
+                <img src="{% static 'images/비교과-배너-템플릿_1.png'%}" sizes="(max-width: 479px) 33vw, (max-width: 767px) 11vw, (max-width: 991px) 8vw, (max-width: 1919px) 5vw, 6vw" height="150" width="760" srcset="{% static 'images/비교과-배너-템플릿_1-p-500.png' %} 500w, {% static 'images/비교과-배너-템플릿_1-p-800.png' %} 800w, {% static 'images/비교과-배너-템플릿_1-p-1080.png' %} 1080w, {% static 'images/비교과-배너-템플릿_1.png' %} 1520w" alt="" class="home-image">
+              </div>
+            </div>
+            <div class="product3-content-wrap">
+              <a href="/1-hero" class="size4-link">대제목</a>
+            </div>
+          </div>
+          <div>
+            <div class="image-wrap">
+              <a data-w-id="679e28a2-773b-d689-0254-dc002d62483d" style="opacity:0" href="#" class="item-overlay w-inline-block">
+                <div class="button-small white-small">
+                  <div>View Category</div>
+                </div>
+              </a>
+              <div class="home-item-wrap">
+                <img src="{% static 'images/비교과-배너-템플릿_1.png'%}" sizes="(max-width: 479px) 33vw, (max-width: 767px) 11vw, (max-width: 991px) 8vw, (max-width: 1919px) 5vw, 6vw" height="150" width="760" srcset="{% static 'images/비교과-배너-템플릿_1-p-500.png' %} 500w, {% static 'images/비교과-배너-템플릿_1-p-800.png' %} 800w, {% static 'images/비교과-배너-템플릿_1-p-1080.png' %} 1080w, {% static 'images/비교과-배너-템플릿_1.png' %} 1520w" alt="" class="home-image">
+              </div>
+            </div>
+            <div class="product3-content-wrap">
+              <a href="/1-hero" class="size4-link">대제목</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 전공튜터링 공지 시작-->
+  <div class="wrapper home">
+    <div class="section notice">
+      <div class="w-layout-grid product5-grid">
+        <div id="w-node-8f8d1332e51d-7c9b9f8f" class="home-sections-label">
+          <div class="label black-label major_tutoring">major tutoring</div>
+          <div class="size1-text major_tutoring">전공 튜터링</div>
+          <p class="paragraph-70">실제 전공과목에 대해<br>학생들 스스로 멘토링 그룹을 형성해<br>학습을 하는 튜터링 프로그램입니다.</p>
+          <a href="tutoring-detail-page.html" class="more">More -&gt;</a>
+        </div>
+        <div id="w-node-8f8d1332e52f-7c9b9f8f" class="w-layout-grid homepage-layouts-grid">
+          <div>
+            <div class="image-wrap">
+              <a data-w-id="ad17d558-e0e8-120e-dc5a-4d4a72fb1910" style="opacity:0" href="#" class="item-overlay w-inline-block">
+                <div class="button-small white-small">
+                  <div>View Category</div>
+                </div>
+              </a>
+              <div class="home-item-wrap">
+                <img src="{% static 'images/비교과-배너-템플릿_1.png' %}" sizes="(max-width: 479px) 33vw, (max-width: 767px) 11vw, (max-width: 991px) 8vw, (max-width: 1919px) 5vw, 6vw" height="150" width="760" srcset="{% static 'images/비교과-배너-템플릿_1-p-500.png' %} 500w, {% static 'images/비교과-배너-템플릿_1-p-800.png' %} 800w, {% static 'images/비교과-배너-템플릿_1-p-1080.png' %} 1080w, {% static 'images/비교과-배너-템플릿_1.png' %} 1520w" alt="" class="home-image">
+              </div>
+            </div>
+            <div class="product3-content-wrap">
+              <a href="/1-hero" class="size4-link">대제목</a>
+            </div>
+          </div>
+          <div>
+            <div class="image-wrap">
+              <a data-w-id="50658a62-4b7e-0b11-92d6-138e261950d6" style="opacity:0" href="#" class="item-overlay w-inline-block">
+                <div class="button-small white-small">
+                  <div>View Category</div>
+                </div>
+              </a>
+              <div class="home-item-wrap">
+                <img src="{% static 'images/비교과-배너-템플릿_초록_1.png' %}" sizes="(max-width: 479px) 33vw, (max-width: 767px) 11vw, (max-width: 991px) 8vw, (max-width: 1919px) 5vw, 6vw" height="150" width="760" srcset="{% static 'images/비교과-배너-템플릿_초록_1-p-500.png' %} 500w, {% static 'images/비교과-배너-템플릿_초록_1-p-800.png' %} 800w, {% static 'images/비교과-배너-템플릿_초록_1-p-1080.png' %} 1080w, {% static 'images/비교과-배너-템플릿_초록_1.png' %} 1520w" alt="" class="home-image">
+              </div>
+            </div>
+            <div class="product3-content-wrap">
+              <a href="/1-hero" class="size4-link">대제목</a>
+            </div>
+          </div>
+          <div>
+            <div class="image-wrap">
+              <a data-w-id="a2b798a5-6e77-a270-c867-946f4016521f" style="opacity:0" href="#" class="item-overlay w-inline-block">
+                <div class="button-small white-small">
+                  <div>View Category</div>
+                </div>
+              </a>
+              <div class="home-item-wrap">
+                <img src="{% static 'images/비교과-배너-템플릿_노랑_1.png' %}" sizes="(max-width: 479px) 33vw, (max-width: 767px) 11vw, (max-width: 991px) 8vw, (max-width: 1919px) 5vw, 6vw" height="150" width="760" srcset="{% static 'images/비교과-배너-템플릿_노랑_1-p-500.png' %} 500w, {% static 'images/비교과-배너-템플릿_노랑_1-p-800.png'%} 800w, {% static 'images/비교과-배너-템플릿_노랑_1-p-1080.png' %} 1080w, {% static 'images/비교과-배너-템플릿_노랑_1.png' %} 1520w" alt="" class="home-image">
+              </div>
+            </div>
+            <div class="product3-content-wrap">
+              <a href="/1-hero" class="size4-link">대제목</a>
+            </div>
+          </div>
+          <div>
+            <div class="image-wrap">
+              <a data-w-id="123de6e4-2ae0-a06d-c002-ee8690de2352" style="opacity:0" href="#" class="item-overlay w-inline-block">
+                <div class="button-small white-small">
+                  <div>View Category</div>
+                </div>
+              </a>
+              <div class="home-item-wrap">
+              <img src="{% static 'images/비교과-배너-템플릿_빨강_1.png' %}" sizes="(max-width: 479px) 33vw, (max-width: 767px) 11vw, (max-width: 991px) 8vw, (max-width: 1919px) 5vw, 6vw" height="150" width="760" srcset="{% static 'images/비교과-배너-템플릿_빨강_1-p-500.png' %} 500w, {% static 'images/비교과-배너-템플릿_빨강_1-p-800.png' %} 800w, {% static 'images/비교과-배너-템플릿_빨강_1-p-1080.png' %} 1080w, {% static 'images/비교과-배너-템플릿_빨강_1.png' %} 1520w" alt="" class="home-image">
+              </div>
+            </div>
+            <div class="product3-content-wrap">
+              <a href="/1-hero" class="size4-link">대제목</a>
+            </div>
+          </div>
+          <div>
+            <div class="image-wrap">
+              <a data-w-id="f08d30d2-fe84-2df6-59a9-2e973ac2a349" style="opacity:0" href="#" class="item-overlay w-inline-block">
+                <div class="button-small white-small">
+                  <div>View Category</div>
+                </div>
+              </a>
+              <div class="home-item-wrap">
+                <img src="{% static 'images/비교과-배너-템플릿_파랑_1.png' %}" sizes="(max-width: 479px) 33vw, (max-width: 767px) 11vw, (max-width: 991px) 8vw, (max-width: 1919px) 5vw, 6vw" height="150" width="760" srcset="{% static 'images/비교과-배너-템플릿_파랑_1-p-500.png'%} 500w, {% static 'images/비교과-배너-템플릿_파랑_1-p-800.png' %} 800w, {% static 'images/비교과-배너-템플릿_파랑_1-p-1080.png' %} 1080w, {% static 'images/비교과-배너-템플릿_파랑_1.png' %} 1520w" alt="" class="home-image">
+              </div>
+            </div>
+            <div class="product3-content-wrap">
+              <a href="/1-hero" class="size4-link">대제목</a>
+            </div>
+          </div>
+          <div>
+            <div class="image-wrap">
+              <a data-w-id="75204be7-237d-6ea1-872c-966466b451a2" style="opacity:0" href="#" class="item-overlay w-inline-block">
+                <div class="button-small white-small">
+                  <div>View Category</div>
+                </div>
+              </a>
+              <div class="home-item-wrap">
+                <img src="{% static 'images/비교과-배너-템플릿_보라_1.png'%}" sizes="(max-width: 479px) 33vw, (max-width: 767px) 11vw, (max-width: 991px) 8vw, (max-width: 1919px) 5vw, 6vw" height="150" width="760" srcset="{% static 'images/비교과-배너-템플릿_보라_1-p-500.png' 500w %}, {% static 'images/비교과-배너-템플릿_보라_1-p-800.png' 800w %}, {% static 'images/비교과-배너-템플릿_보라_1-p-1080.png' 1080w %}" alt="" class="home-image">
+              </div>
+            </div>
+            <div class="product3-content-wrap">
+              <a href="/1-hero" class="size4-link">대제목</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
