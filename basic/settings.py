@@ -42,7 +42,6 @@ INSTALLED_APPS = [
     'ckeditor_uploader',
     'django_summernote',
     'main_app.apps.Main_appConfig',
-    'mentoring_app.apps.Mentoring_appConfig',
     'QnA_app.apps.QnaAppConfig',
     'login_app.apps.LoginAppConfig',
     ]
@@ -132,10 +131,11 @@ USE_TZ = False
 STATIC_URL = '/static/'
 
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'main_app', 'static')
+    # os.path.join(BASE_DIR, 'main_app', 'static'),
+    BASE_DIR / 'static',
 
 ]
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+# STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = 'media/'

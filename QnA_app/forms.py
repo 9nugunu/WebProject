@@ -1,12 +1,11 @@
 from django import forms
 from .models import QnaModel, Answer, Comment
 from ckeditor_uploader.widgets import CKEditorUploadingWidget
-from django_summernote.widgets import SummernoteWidget
 
 class New(forms.ModelForm):
     class Meta:
         model = QnaModel
-        fields = ['title', 'content']
+        fields = ['category', 'title', 'content']
 
     widgets = {
             'title': forms.TextInput(

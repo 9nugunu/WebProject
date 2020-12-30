@@ -1,0 +1,41 @@
+
+{%extends 'base.html' %}
+
+{% block content%}
+{% load static %}
+<body class="body">
+  
+  <div class="wrapper home">
+    <div class="hero5 home-hero5">
+      <div class="hero5-image-wrap homepage-wrap">
+        <div class="content-wrap">
+          <div class="home-hero-text-wrap">
+            <div class="home-hero-wrap">
+              <div data-w-id="5ab16fec-c814-d8d5-ef68-f9d31ac90dd2" style="opacity:0" class="prospero-ui-kit-headline-copy-copy">sand box<br></div>
+              <div class="size3-text home"><strong class="bold-text-2">전자 및 정보공학과 비교과 웹페이지</strong><br></div>
+            </div>
+            <div class="kit-hero-buttons-wrap">
+              <a data-w-id="cb38861a-ddd8-53bf-f2db-81d718863b1a" href="https://sportal.korea.ac.kr/" target="_blank" class="button-large blue-button w-inline-block">
+                <div class="text-block-2"><strong>인재양성 홈페이지</strong></div>
+                <img src="{% static 'images/Arrow2x.svg'%}" alt="" class="button-arrow">
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="home-hero-image-wrap">
+          <img src="{% static 'images/main_pic.jpg'%}" loading="lazy" width="900" sizes="(max-width: 991px) 100vw, 45vw" srcset="{% static 'images/main_pic-p-500.jpeg'%} 500w, {% static 'images/main_pic-p-800.jpeg'%} 800w, {% static 'images/main_pic-p-1080.jpeg'%} 1080w, {% static 'images/main_pic-p-1600.jpeg'%} 1600w, {% static 'images/main_pic-p-2000.jpeg'%} 2000w, {% static 'images/main_pic-p-2600.jpeg' %} 2600w, {% static 'images/main_pic-p-3200.jpeg' %} 3200w, {% static 'images/main_pic.jpg'%} 3610w" alt="" class="image">
+        </div>
+      </div>
+
+      <!-- 4대 전공 시작 -->
+      {% include 'main/4-major.html'%}
+      <!-- 4대 전공 끝-->
+    </div>
+  </div>
+
+  <!-- 공지사항 시작-->
+  {% include 'main/contents.html'%}
+  <!-- 공지사항 끝-->
+
+  {% include 'footer.html' %}
+  {% endblock %}
